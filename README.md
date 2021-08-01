@@ -6,7 +6,7 @@ is an adaptive model which progessively leanrs and updates based
 on the incoming text. It uses a dictionary and the compressed text 
 consists of positions of string patterns in the dictionary.
 
-##Set-up
+## Set-up
 To set up the compressor, first create an instance of the LZW class. 
 
     LZW compressor = new LZW();
@@ -22,12 +22,12 @@ string you wish to encode.
     Hashtable<String, Integer> initialDictionaryEncode = compressor.makeInitialDictionaryEncode(stringToEncode);
     Hashtable<Integer, String> initialDictionaryDecode = compressor.makeInitialDictionaryDecode(stringToEncode);
 
-##Compress
+## Compress
 To compress the string, call the encode method.
 
     ArrayList<Integer> compressedString = compressor.encode(stringToEncode, initialDictionaryEncode);
 
-##Decompress
+## Decompress
 To decompress the list of dictionary positions, call the decode method.
 
     String decompressedString = compressor.decode(compressedString, initialDictionaryDecode);
