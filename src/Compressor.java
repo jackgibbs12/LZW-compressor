@@ -7,13 +7,17 @@ public class Compressor {
 
         String stringToEncode = "aababacbaacbaadaaa";
 
+        /* Create the initial dictionary for encoding and decoding */
         Hashtable<String, Integer> initialDictionaryEncode = compressor.makeInitialDictionaryEncode(stringToEncode);
         Hashtable<Integer, String> initialDictionaryDecode = compressor.makeInitialDictionaryDecode(stringToEncode);
 
-        ArrayList<Integer> compressedString = (compressor.encode(stringToEncode, initialDictionaryEncode));
+        /* Compress and then decompress the string */
+        ArrayList<Integer> compressedString = compressor.encode(stringToEncode, initialDictionaryEncode);
         String decompressedString = compressor.decode(compressedString, initialDictionaryDecode);
 
+        System.out.println("Compressed String:");
         System.out.println(compressedString);
+        System.out.println("\nDecompressed String:");
         System.out.println(decompressedString);
     }
 }
